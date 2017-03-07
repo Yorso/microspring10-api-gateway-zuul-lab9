@@ -3,3 +3,18 @@
 spring:
   thymeleaf:
     cache: false
+   
+# Zuul configuration 
+zuul:
+  prefix: /services #http://localost:8080/services/...
+  ignored-services: verb #http://localost:8080/services/verb will be ignored, as if this service didn't exist (it causes error currently)
+  routes:
+    subject:
+      path: /sentence-subject/** #http://localost:8080/services/sentence-subject => {"word":"He"} (.../subject is incorrect)
+    adjective:
+      path: /sentence-adjective/** #http://localost:8080/services/sentence-adjective => {"word":"reasonable"} (.../adjective is incorrect)
+                                
+                                   #http://localost:8080/services/noun => {"word":"boat"} (.../sentence-noun is incorrect)
+                                   #http://localost:8080/services/article => {"word":"the"} (.../sentence-article is incorrect)
+                                   
+    

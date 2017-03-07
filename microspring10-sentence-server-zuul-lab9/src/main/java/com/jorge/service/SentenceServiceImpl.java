@@ -29,11 +29,11 @@ public class SentenceServiceImpl implements SentenceService {
 	 */
 	public String buildSentence() {
 		String sentence = "There was a problem assembling the sentence!";
-		sentence =  String.format("%s %s",// %s %s %s.", 
-				//subjectService.getWord().getString(),
+		sentence =  String.format("%s %s %s %s %s.", 
+				subjectService.getWord().getString(),
 				verbService.getWord().getString(),
-				//articleService.getWord().getString(),
-				//adjectiveService.getWord().getString(),
+				articleService.getWord().getString(),
+				adjectiveService.getWord().getString(),
 				nounService.getWord().getString());
 		
 		return sentence;

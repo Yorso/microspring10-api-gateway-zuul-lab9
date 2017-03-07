@@ -28,12 +28,20 @@
 
 <script type="text/javascript">
 	
-	//	TODO: Alter this prefix when instructed.
-	var prefix = "";
+	/*
+		TODO: Alter this prefix when instructed.
+		
+		Our web page expects JavaScript and CSS resources to be located under "/js" and "/css" 
+		respectively. Let's adjust our system so that all calls to the back-end microservices are 
+		under "/services".
+	*/
+	var prefix = "/services"; //Change the prefix variable to "/services"
 
 	// Perform AJAX requests...
 	$.getJSON(prefix + "/subject",   null, displaySubject)  .fail(displayErrorSubject);
-	$.getJSON(prefix + "/verb",      null, displayVerb)     .fail(displayErrorVerb);
+	$.getJSON(prefix + "/verb",      null, displayVerb)     .fail(displayErrorVerb); //verb is being ignored,
+	                                                                                 //hence it causes error.
+	                                                                                 //Check application.yml file!!!
 	$.getJSON(prefix + "/article",   null, displayArticle)  .fail(displayErrorArticle);
 	$.getJSON(prefix + "/adjective", null, displayAdjective).fail(displayErrorAdjective);
 	$.getJSON(prefix + "/noun",      null, displayNoun)     .fail(displayErrorNoun);

@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>microspring10-gateway-lab9</name>
-	<description>API Gateway - Spring Cloud Zuul</description>
+	<description>API Gateway with Spring Cloud Zuul</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -62,7 +62,10 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
-		<!-- Spring Cloud Netflix Zuul - JVM-based router and load balancer. Used to API Gateway lab -->
+		<!-- 
+			Spring Cloud Netflix Zuul - JVM-based router and load balancer. Used to API Gateway lab. 
+			It includes Ribbon (client-side load-balancer) and Hyxtris (circuit breakers - fallbacks).	
+		-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zuul</artifactId>
